@@ -28,6 +28,7 @@ Route::get('/admin','AdminController@index')->name('admin');
 Route::get('/profile','ProfileController@index')->name('profile');
 Route::get('/editProfile','ProfileController@edit')->name('editProfile');
 Route::post('/updateProfile','ProfileController@update')->name('updateProfile');
+Route::get('/deleteProfile','ProfileController@destroy')->name('deleteProfile');
 
 
 Route::get('/role','RoleController@index')->name('role');

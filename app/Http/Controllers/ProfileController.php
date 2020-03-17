@@ -34,4 +34,10 @@ class ProfileController extends Controller
         return \redirect()->route('profile');
         
     }
+    public function destroy(){
+        $user=User::find(Auth::id());
+        $user->delete();
+        return \redirect()->route('index');
+        
+    }
 }
