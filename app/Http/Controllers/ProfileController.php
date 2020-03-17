@@ -20,6 +20,11 @@ class ProfileController extends Controller
         return view('admin.profile.edit',\compact('user'));
     }
     public function update(Request $request){
+        $request->validate([
+            'name'=>'required|string|max:255',
+            'email'=>'required|string|email|max:255|unique:users,email,'.Auth::id(),
+            'password' => 'required|string|min:8',
+        ]);
         $user=User::find(Auth::id());
         $user->name = $request->name;
         $user->email = $request->email;

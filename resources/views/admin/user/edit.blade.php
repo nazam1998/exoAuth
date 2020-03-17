@@ -8,6 +8,9 @@
             <span>{{$user->name}}</span>
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Rôle</label>
+                @error('role')
+                <small>{{$message}}</small>
+                @enderror
                 <select class="form-control" id="exampleFormControlSelect1" name="role">
                     @foreach ($roles as $item)
                     @if($item->id==$user->id_role)
@@ -19,7 +22,7 @@
                 </select>
             </div>
         </div>
-        <button type="submit">Modifier</button>
+        <button type="submit" class="btn btn-success">Modifier</button>
     </form>
 </div>
 @endsection

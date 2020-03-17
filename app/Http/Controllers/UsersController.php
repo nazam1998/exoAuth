@@ -22,6 +22,9 @@ class UsersController extends Controller
         return view('admin.user.edit',\compact('user','roles'));
     }
     public function updateRole(Request $request,$id){
+        $request->validate([
+            'role'=>'required|integer'
+        ]);
         $user=User::find($id);
         if($user->id_role==1){
             return \redirect()->route('user');

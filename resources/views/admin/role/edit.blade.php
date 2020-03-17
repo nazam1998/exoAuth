@@ -7,6 +7,9 @@
         @csrf
         <div class="form-group">
             <label for="Role">Role</label>
+            @error('role')
+        <small>{{$message}}</small>
+            @enderror
         <input type="text" class="form-control" id="Role" name="role" value="{{old('role',$role->role)}}">
           </div>
           <button type="submit">Modifier</button>
