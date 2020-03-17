@@ -53,7 +53,7 @@
                         </li>
                         @endif
                         @else
-                        @if (Auth::id()==1 ||Auth::id()==2)
+                        @if (Auth::check())
                              <li>
                             <a class="nav-link" href="{{route('admin')}}">Admin</a>
                         </li>
