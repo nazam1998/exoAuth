@@ -10884,11 +10884,12 @@ a.text-dark:focus {
 
 table,
 td {
-  border: 1px solid blue;
+  border: 1px solid black;
 }
 
 table {
   width: 100%;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 th,
@@ -10898,7 +10899,7 @@ td {
 
 thead,
 tfoot {
-  background-color: blue;
+  background: linear-gradient(90deg, white, black);
   color: #fff;
 }
 
