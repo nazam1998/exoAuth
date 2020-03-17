@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        @if(Auth::check()&&Authid()<=2)
+        @if(Auth::check()&&Auth::id()<=2)
         <h1>Modifier le rôle</h1>
     <form action="{{route('saveRole')}}" method="POST">
         @csrf

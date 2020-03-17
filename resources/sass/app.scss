@@ -25,3 +25,14 @@ tfoot {
     
     color: #fff;
 }
+a{
+    button{
+        transition: 2s ease;
+        opacity: 0.5;
+    }
+}
+a:hover{
+    button{
+        opacity: 1;
+    }
+}
