@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    @if(Auth::check())
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -18,5 +19,10 @@
             </div>
         </div>
     </div>
+    @else
+    <h1 class="text-danger">Désolé, vous n'avez pas l'autorisation d'accéder à cette page
+        <span class="text-danger">Veuillez vous connecter</span>
+    </h1>
+    @endif
 </div>
 @endsection

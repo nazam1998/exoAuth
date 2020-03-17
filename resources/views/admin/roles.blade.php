@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container text-center">
+    @if(Auth::check()&&Auth::id()<=2)
     <table>
         <thead>
             <tr>
@@ -25,5 +26,10 @@
         </tbody>
     </table>
     <a href="{{route('addRole')}}"><button class="btn btn-primary my-5">Ajouter Rôle</button></a>
+    @else
+    <h1 class="text-danger">Désolé, vous n'avez pas l'autorisation d'accéder à cette page
+        <span class="text-danger">Veuillez vous connecter</span>
+    </h1>
+    @endif
 </div>
 @endsection

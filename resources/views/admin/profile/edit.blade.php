@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+    @if(Auth::check())
     <h1>Modifier le user</h1>
     <form action="{{route('updateProfile',Auth::id())}}" method="POST">
         @csrf
@@ -28,5 +29,11 @@
         </div>
         <button type="submit" class="btn btn-success">Modifier</button>
     </form>
+    @else
+    <h1 class="text-danger">Désolé, vous n'avez pas l'autorisation d'accéder à cette page
+        <span class="text-danger">Veuillez vous connecter</span>
+    </h1>
+    @endif
 </div>
+
 @endsection

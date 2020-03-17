@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container text-center">
-
+@if(Auth::check()&&Auth::id()<2)
     <table>
         <thead>
             <tr>
@@ -26,5 +26,10 @@
             @endforeach
         </tbody>
     </table>
+    @else
+    <h1 class="text-danger">Désolé, vous n'avez pas l'autorisation d'accéder à cette page
+        <span class="text-danger">Veuillez vous connecter</span>
+    </h1>
+    @endif
 </div>
 @endsection

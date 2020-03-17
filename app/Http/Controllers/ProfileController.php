@@ -25,6 +25,7 @@ class ProfileController extends Controller
             'email'=>'required|string|email|max:255|unique:users,email,'.Auth::id(),
             'password' => 'required|string|min:8',
         ]);
+        
         $user=User::find(Auth::id());
         $user->name = $request->name;
         $user->email = $request->email;

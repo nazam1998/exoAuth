@@ -13,7 +13,7 @@
     <a href="{{route('profile')}}" class="btn btn-primary col-3">Profile</a>
     @else
     <h1 class="text-danger">Désolé, vous n'avez pas l'autorisation d'accéder à cette page
-        <h2 class="text-danger">Veuillez vous connecter</span>
+        <span class="text-danger">Veuillez vous connecter</span>
     </h1>
     @endif
 </div>
