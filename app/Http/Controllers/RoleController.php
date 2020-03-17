@@ -37,7 +37,7 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'role'=>'required,unique:roles'
+            'role'=>'required|unique:roles'
         ]);
         $role=new Role();
         $role->role=$request->role;
@@ -81,7 +81,7 @@ class RoleController extends Controller
             return \redirect()->route('role');
         }
         $request->validate([
-            'role'=>'required,unique:roles,role,'.$id
+            'role'=>'required|unique:roles,role,'.$id
         ]);
         $role=Role::find($id);
         $role->role=$request->role;

@@ -26,8 +26,8 @@ Route::post('/userUpdateRole/{id}','UsersController@updateRole')->name('updateUs
 Route::get('/admin','AdminController@index')->name('admin');
 
 Route::get('/profile','ProfileController@index')->name('profile');
-Route::get('/editProfile/{id}','ProfileController@edit')->name('editProfile');
-Route::post('/updateProfile/{id}','ProfileController@update')->name('updateProfile');
+Route::get('/editProfile','ProfileController@edit')->name('editProfile');
+Route::post('/updateProfile','ProfileController@update')->name('updateProfile');
 
 
 Route::get('/role','RoleController@index')->name('role');

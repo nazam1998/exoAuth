@@ -19,8 +19,8 @@ class ProfileController extends Controller
         $user=User::find(Auth::id());
         return view('admin.profile.edit',\compact('user'));
     }
-    public function update(Request $request,$id){
-        $user=User::find($id);
+    public function update(Request $request){
+        $user=User::find(Auth::id());
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);

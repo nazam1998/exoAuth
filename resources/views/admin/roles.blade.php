@@ -16,13 +16,14 @@
         <tbody>
             @foreach ($roles as $item)
             <tr>
-            <td>{{$item->id}}</td>
-            <td>{{$item->role}}</td>
-            <td><a href="{{route('editRole',$item->id)}}"><button class="btn btn-warning">Edit</button></a></td>
-            <td><a href="{{route('deleteRole',$item->id)}}"><button class="btn btn-danger">Delete</button></a></td>
+                <td>{{$item->id}}</td>
+                <td>{{$item->role}}</td>
+                <td><a href="{{route('editRole',$item->id)}}"><button class="btn btn-warning">Edit</button></a></td>
+                <td><a href="{{route('deleteRole',$item->id)}}"><button class="btn btn-danger">Delete</button></a></td>
             </tr>
             @endforeach
         </tbody>
     </table>
+    <a href="{{route('addRole')}}"><button class="btn btn-primary my-5">Ajouter Rôle</button></a>
 </div>
 @endsection
