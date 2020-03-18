@@ -28,6 +28,7 @@
             @enderror
                 <input type="password" class="form-control" id="password" name="password">
             </div>
+            @if(Auth::user()->id_role==1)
             <div class="form-group">
                 <label for="exampleFormControlSelect1">Rôle</label>
                 @error('role')
@@ -41,6 +42,7 @@
                     @endforeach
                 </select>
             </div>
+            @endif
         <button type="submit" class="btn btn-success">Ajouter</button>
     </form>
     @else

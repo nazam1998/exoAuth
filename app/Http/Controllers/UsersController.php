@@ -49,7 +49,12 @@ class UsersController extends Controller
         $user->name=$request->name;
         $user->email=$request->email;
         $user->password=$request->password;
-        $user->id_role=$request->role;
+        if(Auth::user()->id_role==1){
+
+            $user->id_role=$request->role;
+        }else{
+            $user->id_role=3;
+        }
         $user->save();
         return redirect()->route('user');
     }
@@ -85,7 +90,15 @@ class UsersController extends Controller
         if($user->id==1 && $user->id_role==1){
             return \redirect()->back();
         }
-        $user->id_role=$request->role;
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->password=$request->password;
+        if(Auth::user()->id_role==1){
+
+            $user->id_role=$request->role;
+        }else{
+            $user->id_role=3;
+        }
         $user->save();
         return redirect()->route('user');
     }
