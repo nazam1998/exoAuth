@@ -4,10 +4,8 @@
 
 <div class="row container text-center mx-auto my-5">
     @if(Auth::check())
-    @if(Auth::user()->id_role==1)
+    @if(Auth::user()->id_role<=2)
     <a href="{{route('user')}}" class="btn btn-primary col-3">Users</a>
-    @endif
-    @if (Auth::user()->id_role==1 || Auth::user()->id_role==2)
     <a href="{{route('role')}}" class="btn btn-primary col-3 mx-3">Rôles</a>
     @endif
     <a href="{{route('profile')}}" class="btn btn-primary col-3">Profile</a>

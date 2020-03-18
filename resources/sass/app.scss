@@ -26,9 +26,10 @@ tfoot {
     color: #fff;
 }
 a{
+    transition: 2s ease;
     button{
-        transition: 2s ease;
         opacity: 0.5;
+        transition: 2s ease;
     }
 }
 a:hover{

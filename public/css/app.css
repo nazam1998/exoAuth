@@ -10903,9 +10903,13 @@ tfoot {
   color: #fff;
 }
 
-a button {
+a {
   transition: 2s ease;
+}
+
+a button {
   opacity: 0.5;
+  transition: 2s ease;
 }
 
 a:hover button {

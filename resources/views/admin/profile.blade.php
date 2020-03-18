@@ -14,7 +14,7 @@
                         <li class="mx-auto my-3">Email : {{$user->email}}</li>
                         <li class="mx-auto my-3">Rôle : {{App\Role::find($user->id_role)->role}}</li>
                         <a href="{{route('editProfile')}}"><button class="btn btn-warning">Editer</button></a>
-                        <a href="{{route('deleteProfile')}}"><button class="btn btn-warning">Supprimer</button></a>
+                        <a href="{{route('deleteProfile')}}"><button class="btn btn-danger">Supprimer</button></a>
                     </div>
                 </div>
             </div>

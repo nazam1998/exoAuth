@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Role;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class RoleController extends Controller
 {
     /**
@@ -14,6 +14,10 @@ class RoleController extends Controller
      */
     public function index()
     {
+        if(Auth::check()&& Auth::user()->id_role>2){
+            return redirect()->back();
+        }
+        
         $roles=Role::all();
         return view('admin.roles',\compact('roles'));
     }
@@ -25,6 +29,9 @@ class RoleController extends Controller
      */
     public function create()
     {
+        if(Auth::check()&& Auth::user()->id_role>2){
+            return redirect()->back();
+        }
         return view('admin.role.add');
     }
 
@@ -36,6 +43,9 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
+        if(Auth::check()&& Auth::user()->id_role>2){
+            return redirect()->back();
+        }
         $request->validate([
             'role'=>'required|unique:roles'
         ]);
@@ -60,7 +70,7 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        if($id<=2){
+        if($id<=3){
             return \redirect()->route('role');
         }
         
@@ -77,7 +87,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if($id<=2){
+        if($id<=3){
             return \redirect()->route('role');
         }
         $request->validate([
@@ -97,7 +107,7 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        if($id<=2){
+        if($id<=3){
             return \redirect()->route('role');
         }
         $role=Role::find($id);

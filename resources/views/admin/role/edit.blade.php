@@ -4,7 +4,7 @@
     <div class="container">
         @if(Auth::check()&&Auth::id()<=2)
         <h1>Modifier le rôle</h1>
-    <form action="{{route('saveRole')}}" method="POST">
+    <form action="{{route('updateRole',$role->id)}}" method="POST">
         @csrf
         <div class="form-group">
             <label for="Role">Role</label>

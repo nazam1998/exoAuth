@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container text-center">
-    @if(Auth::check()&&Auth::id()<=2)
+    @if(Auth::check()&& Auth::user()->id_role<=2)
     <table>
         <thead>
             <tr>

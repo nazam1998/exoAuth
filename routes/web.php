@@ -20,8 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/user','UsersController@index')->name('user');
+Route::get('/userAdd','UsersController@add')->name('addUserRole');
+Route::post('/userSaveRole','UsersController@save')->name('saveUserRole');
 Route::get('/userEditRole/{id}','UsersController@editRole')->name('editUserRole');
 Route::post('/userUpdateRole/{id}','UsersController@updateRole')->name('updateUserRole');
+Route::get('/userDeleteRole/{id}','UsersController@destroy')->name('deleteUserRole');
 
 Route::get('/admin','AdminController@index')->name('admin');
 
